@@ -125,7 +125,7 @@ nhanes_covar =
 nhanes = 
   nhanes_accel |> 
   left_join(nhanes_covar, by = "seqn") |>
-  filter(age > 21) |>
+  filter(age >= 21) |>
   mutate(
     sex = factor(sex, levels = c("Male", "Female")),
     education = factor(education, levels = c(
